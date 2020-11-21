@@ -17,16 +17,21 @@ public abstract class Character : Unit
 
     protected IXArea ixArea;
 
+    private FSM _fsm;
+    public BaseState[] states;
+
     protected override void Awake()
     {
         base.Awake();
-        
+
         ixArea = GetComponentInChildren<IXArea>();
     }
 
     protected override void Start()
     {
         base.Start();
+
+        _fsm = new FSM(typeof(DefaultState), states);
         
         interactableObjectTypes = new List<Type>();
         InitInteractableObjectTypes();
@@ -60,11 +65,11 @@ public abstract class Character : Unit
 
         if (xSpeed > 0)
         {
-            transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (xSpeed < 0)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
