@@ -5,7 +5,13 @@ using UnityEngine;
 public abstract class Character : Unit
 {
     public float jumpForce;
+    
     protected bool isGrounded;
+    public bool IsGrounded
+    {
+        get => isGrounded;
+        set => isGrounded = value;
+    }
 
     protected List<System.Type> interactableObjectTypes;
 
@@ -45,22 +51,6 @@ public abstract class Character : Unit
     private void HandleGravity()
     {
         rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.gameObject.CompareTag("Obstacle"))
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.gameObject.CompareTag("Obstacle"))
-        {
-            isGrounded = false;
-        }
     }
 
     private void HandleHorizontalMovement()

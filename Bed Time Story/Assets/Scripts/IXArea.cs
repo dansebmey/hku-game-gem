@@ -1,15 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-public class IXArea : MonoBehaviour
+public class IXArea : ScanArea
 {
-    private Character _observer;
     internal Prop propInFocus;
-
-    private void Awake()
-    {
-        _observer = GetComponentInParent<Character>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
