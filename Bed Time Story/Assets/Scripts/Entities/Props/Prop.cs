@@ -57,6 +57,7 @@ public abstract class Prop : MonoBehaviour
         if (_isBeingCarried)
         {
             transform.localPosition = new Vector3(0.5f, -0.5f);
+            // _mirroredOutlineSpriteRenderer.transform.position = new Vector3(0.5f, );
         }
     }
 

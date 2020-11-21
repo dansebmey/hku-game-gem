@@ -29,15 +29,6 @@
             <e p="AudioManager.cs" t="Include" />
             <e p="GameConstants.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
-            <e p="StateMachine" t="Include">
-              <e p="BaseState.cs" t="Include" />
-              <e p="CharacterStates" t="Include">
-                <e p="PlayerState.cs" t="Include" />
-                <e p="PlayerState_Carrying.cs" t="Include" />
-                <e p="PlayerState_Default.cs" t="Include" />
-              </e>
-              <e p="FSM.cs" t="Include" />
-            </e>
           </e>
         </e>
       </e>

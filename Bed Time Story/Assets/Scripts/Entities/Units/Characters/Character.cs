@@ -46,8 +46,6 @@ public abstract class Character : Unit
         }
     }
 
-    public BaseState[] states;
-
     protected override void Awake()
     {
         base.Awake();

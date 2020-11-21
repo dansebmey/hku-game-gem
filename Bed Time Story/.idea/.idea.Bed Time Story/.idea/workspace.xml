@@ -8,14 +8,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/BaseState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Carrying.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/FSM.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Default.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Parent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -48,8 +43,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/BaseState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
       </list>
     </option>
   </component>
@@ -90,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605912398178</updated>
       <workItem from="1605912405850" duration="10150000" />
-      <workItem from="1605947328865" duration="18921000" />
+      <workItem from="1605947328865" duration="20878000" />
     </task>
     <servers />
   </component>
