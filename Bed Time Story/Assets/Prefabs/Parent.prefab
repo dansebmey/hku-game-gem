@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 7825748380186995802}
   - component: {fileID: 7825748380186995803}
   - component: {fileID: 7825748380186995804}
-  - component: {fileID: 7825748380186995805}
+  - component: {fileID: 9082310123872555622}
   m_Layer: 0
   m_Name: Parent
   m_TagString: Untagged
@@ -305,7 +305,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7825748380186995805
+--- !u!114 &9082310123872555622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -314,11 +314,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7825748380186995801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f6b11d62d4331f4191f9e5a938fcb3a, type: 3}
+  m_Script: {fileID: 11500000, guid: 578625f3b8544680b7ac59079d9f3a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
   jumpForce: 20
-  states:
-  - {fileID: 0}
-  - {fileID: 0}

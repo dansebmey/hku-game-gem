@@ -2,10 +2,10 @@
 
 public class ScanArea : MonoBehaviour
 {
-    protected Character character;
+    protected Player Player;
 
     private void Awake()
     {
-        character = GetComponentInParent<Character>();
+        Player = GetComponentInParent<Player>();
     }
 }

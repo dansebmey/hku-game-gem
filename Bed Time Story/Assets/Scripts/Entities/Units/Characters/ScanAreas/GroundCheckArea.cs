@@ -9,7 +9,7 @@ public class GroundCheckArea : ScanArea
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Landed on the ground");
-            character.IsGrounded = true;
+            Player.IsGrounded = true;
         }
     }
 
@@ -18,7 +18,7 @@ public class GroundCheckArea : ScanArea
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("No longer on the ground");
-            character.IsGrounded = false;
+            Player.IsGrounded = false;
         }
     }
 }

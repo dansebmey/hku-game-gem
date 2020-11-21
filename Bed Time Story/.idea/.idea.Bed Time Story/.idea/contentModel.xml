@@ -8,14 +8,16 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Entities" t="Include">
+            <e p="IXObjects" t="Include">
+              <e p="IXObject.cs" t="Include" />
+              <e p="ToyBlock.cs" t="Include" />
+            </e>
             <e p="Props" t="Include">
               <e p="Cube.cs" t="Include" />
-              <e p="Prop.cs" t="Include" />
             </e>
             <e p="Units" t="Include">
               <e p="Characters" t="Include">
-                <e p="Character.cs" t="Include" />
-                <e p="Parent.cs" t="Include" />
+                <e p="Player.cs" t="Include" />
                 <e p="ScanAreas" t="Include">
                   <e p="GroundCheckArea.cs" t="Include" />
                   <e p="IXArea.cs" t="Include" />

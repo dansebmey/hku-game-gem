@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : Unit
+public class Player : Unit
 {
     public float jumpForce;
     
@@ -13,19 +13,16 @@ public abstract class Character : Unit
         set => isGrounded = value;
     }
 
-    protected List<Type> interactableObjectTypes;
-
     protected IXArea ixArea;
-    
-    private Prop _carriedItem;
-    public Prop CarriedItem
+    private ToyBlock _carriedItem;
+    public ToyBlock CarriedItem
     {
         get => _carriedItem;
         set => _carriedItem = value;
     }
 
     public enum State { DEFAULT, CARRYING_AN_ITEM }
-    private State _currentState;
+    private State _currentState = State.DEFAULT;
     public State CurrentState
     {
         get => _currentState;
@@ -56,12 +53,7 @@ public abstract class Character : Unit
     protected override void Start()
     {
         base.Start();
-        
-        interactableObjectTypes = new List<Type>();
-        InitInteractableObjectTypes();
     }
-
-    protected abstract void InitInteractableObjectTypes();
 
     protected override void Update()
     {
@@ -116,7 +108,7 @@ public abstract class Character : Unit
         {
             if (CarriedItem == null)
             {
-                ixArea.propInFocus?.OnPickup(this);   
+                ixArea.propInFocus?.OnPickup(this);
             }
             else
             {

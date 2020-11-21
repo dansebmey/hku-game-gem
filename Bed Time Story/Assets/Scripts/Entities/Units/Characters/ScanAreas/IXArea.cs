@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class IXArea : ScanArea
 {
-    internal Prop propInFocus;
+    internal ToyBlock propInFocus;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var prop = other.gameObject.GetComponent<Prop>();
+        var prop = other.gameObject.GetComponent<ToyBlock>();
         if (prop != null && propInFocus == null)
         {
             propInFocus = prop;
