@@ -21,6 +21,8 @@ public class Player : Unit
         set => _carriedItem = value;
     }
 
+    internal Vector2 dir;
+
     public enum State { DEFAULT, CARRYING_AN_ITEM }
     private State _currentState = State.DEFAULT;
     public State CurrentState
@@ -82,10 +84,12 @@ public class Player : Unit
 
         if (xSpeed > 0)
         {
+            dir = Vector2.right;
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if (xSpeed < 0)
         {
+            dir = Vector2.left;
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
