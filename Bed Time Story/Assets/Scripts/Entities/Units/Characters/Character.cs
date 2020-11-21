@@ -13,7 +13,7 @@ public abstract class Character : Unit
         set => isGrounded = value;
     }
 
-    protected List<System.Type> interactableObjectTypes;
+    protected List<Type> interactableObjectTypes;
 
     protected IXArea ixArea;
     
@@ -21,14 +21,10 @@ public abstract class Character : Unit
     public Prop CarriedItem
     {
         get => _carriedItem;
-        set
-        {
-            _carriedItem = value;
-        }
+        set => _carriedItem = value;
     }
 
     public enum State { DEFAULT, CARRYING_AN_ITEM }
-
     private State _currentState;
     public State CurrentState
     {

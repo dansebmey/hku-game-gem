@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class Prop : MonoBehaviour
 {
+    protected Collider2D coll2d;
+    
     private Vector3 _targetPos;
     private SpriteRenderer _ixSpriteRenderer;
     private SpriteRenderer _mirroredOutlineSpriteRenderer;
@@ -14,6 +16,8 @@ public abstract class Prop : MonoBehaviour
 
     private void Awake()
     {
+        coll2d = GetComponent<Collider2D>();
+        
         _ixSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[1];
         _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
     }
@@ -24,30 +28,32 @@ public abstract class Prop : MonoBehaviour
         
         actor.CarriedItem = this;
         actor.CurrentState = Character.State.CARRYING_AN_ITEM;
-        
+
+        coll2d.enabled = false;
         transform.parent = actor.transform;
         
-        // Vector3 pos = transform.position;
-        // _targetPos = new Vector3(pos.x, pos.y * -1);
-        // StartCoroutine(MoveToTargetPos());
+        var actorScale = actor.transform.localScale;
+        transform.localScale = new Vector3(actorScale.x * -1, actorScale.y);
+        
+        _mirroredOutlineSpriteRenderer.enabled = true;
     }
 
     public void OnDrop(Character actor)
     {
         _isBeingCarried = false;
-        transform.parent = null;
+        
         actor.CarriedItem = null;
         actor.CurrentState = Character.State.DEFAULT;
+        transform.localScale = actor.transform.localScale;
+
+        coll2d.enabled = true;
+        transform.parent = null;
+        
+        _mirroredOutlineSpriteRenderer.enabled = false;
     }
 
     private void Update()
     {
-        // if (_highlighted)
-        // {
-        //     Vector3 pos = transform.position;
-        //     _mirroredOutlineSpriteRenderer.transform.position = new Vector3(pos.x, pos.y * -1);
-        // }
-        // else
         if (_isBeingCarried)
         {
             transform.localPosition = new Vector3(0.5f, -0.5f);
@@ -69,15 +75,13 @@ public abstract class Prop : MonoBehaviour
     {
         _highlighted = true;
         
-        // _ixSpriteRenderer.enabled = true;
-        _mirroredOutlineSpriteRenderer.enabled = true;
+        _ixSpriteRenderer.enabled = true;
     }
     
     public void OnLeaveScope()
     {
         _highlighted = false;
         
-        // _ixSpriteRenderer.enabled = false;
-        _mirroredOutlineSpriteRenderer.enabled = false;
+        _ixSpriteRenderer.enabled = false;
     }
 }
