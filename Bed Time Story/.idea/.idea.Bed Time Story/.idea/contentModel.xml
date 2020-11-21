@@ -9,9 +9,11 @@
         <e p="Scripts" t="Include">
           <e p="Character.cs" t="Include" />
           <e p="Cube.cs" t="Include" />
+          <e p="GroundCheckArea.cs" t="Include" />
           <e p="IXArea.cs" t="Include" />
           <e p="Parent.cs" t="Include" />
           <e p="Prop.cs" t="Include" />
+          <e p="ScanArea.cs" t="Include" />
           <e p="Unit.cs" t="Include" />
         </e>
       </e>

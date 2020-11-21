@@ -10,9 +10,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IXArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GroundCheckArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Prop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Cube.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScanArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Parent.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -20,9 +22,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Parent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/IXArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prop.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IXArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScanArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
       </list>
     </option>
@@ -60,7 +64,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605912398178</updated>
-      <workItem from="1605912405850" duration="9663000" />
+      <workItem from="1605912405850" duration="10150000" />
+      <workItem from="1605947328865" duration="1852000" />
     </task>
     <servers />
   </component>
