@@ -4,7 +4,7 @@ public abstract class BaseState : MonoBehaviour
 {
     protected FSM fsm;
 
-    public void Init(FSM fsm)
+    public virtual void Init(FSM fsm)
     {
         this.fsm = fsm;
     }

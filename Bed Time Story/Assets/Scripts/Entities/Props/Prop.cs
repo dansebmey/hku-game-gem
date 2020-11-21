@@ -10,6 +10,7 @@ public abstract class Prop : MonoBehaviour
     private SpriteRenderer _mirroredOutlineSpriteRenderer;
     
     private bool _highlighted;
+    private bool _isBeingCarried;
 
     private void Awake()
     {
@@ -17,20 +18,39 @@ public abstract class Prop : MonoBehaviour
         _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
     }
 
-    public virtual void OnInteract(Character actor)
+    public virtual void OnPickup(Character actor)
     {
-        Vector3 pos = transform.position;
+        _isBeingCarried = true;
         
-        _targetPos = new Vector3(pos.x, pos.y * -1);
-        StartCoroutine(MoveToTargetPos());
+        actor.CarriedItem = this;
+        actor.CurrentState = Character.State.CARRYING_AN_ITEM;
+        
+        transform.parent = actor.transform;
+        
+        // Vector3 pos = transform.position;
+        // _targetPos = new Vector3(pos.x, pos.y * -1);
+        // StartCoroutine(MoveToTargetPos());
+    }
+
+    public void OnDrop(Character actor)
+    {
+        _isBeingCarried = false;
+        transform.parent = null;
+        actor.CarriedItem = null;
+        actor.CurrentState = Character.State.DEFAULT;
     }
 
     private void Update()
     {
-        if (_highlighted)
+        // if (_highlighted)
+        // {
+        //     Vector3 pos = transform.position;
+        //     _mirroredOutlineSpriteRenderer.transform.position = new Vector3(pos.x, pos.y * -1);
+        // }
+        // else
+        if (_isBeingCarried)
         {
-            Vector3 pos = transform.position;
-            _mirroredOutlineSpriteRenderer.transform.position = new Vector3(pos.x, pos.y * -1);
+            transform.localPosition = new Vector3(0.5f, -0.5f);
         }
     }
 

@@ -9,12 +9,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/BaseState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/CarryingState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Carrying.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/FSM.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/DefaultState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Default.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Parent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -37,15 +38,18 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Prop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/Test.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/DefaultState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/CarryingState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/DefaultState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Carrying.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState_Default.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/FSM.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/BaseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/PlayerState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" />
       </list>
     </option>
   </component>
@@ -75,6 +79,9 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e6ff08c6-ee3a-42bd-aaf1-00f7415dea83" name="Default Changelist" comment="" />
@@ -83,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605912398178</updated>
       <workItem from="1605912405850" duration="10150000" />
-      <workItem from="1605947328865" duration="9239000" />
+      <workItem from="1605947328865" duration="13425000" />
     </task>
     <servers />
   </component>

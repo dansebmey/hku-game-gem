@@ -296,6 +296,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 599684994, guid: c218add0f5199be4abaf8263caba32bd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901309547370038717, guid: c218add0f5199be4abaf8263caba32bd,
+        type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 3901309547370038719, guid: c218add0f5199be4abaf8263caba32bd,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3901309548701885968, guid: c218add0f5199be4abaf8263caba32bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -810,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1713055264
 Grid:
   m_ObjectHideFlags: 0
@@ -944,6 +958,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7825748379817000330, guid: e7f3b9fd19eff534ebadcd27cfc04472,
+        type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
     - target: {fileID: 7825748380186995801, guid: e7f3b9fd19eff534ebadcd27cfc04472,
         type: 3}
       propertyPath: m_Name

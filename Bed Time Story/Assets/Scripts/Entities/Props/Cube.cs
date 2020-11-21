@@ -2,8 +2,8 @@
 
 public class Cube : Prop
 {
-    public override void OnInteract(Character actor)
+    public override void OnPickup(Character actor)
     {
-        base.OnInteract(actor);
+        base.OnPickup(actor);
     }
 }

@@ -16,8 +16,40 @@ public abstract class Character : Unit
     protected List<System.Type> interactableObjectTypes;
 
     protected IXArea ixArea;
+    
+    private Prop _carriedItem;
+    public Prop CarriedItem
+    {
+        get => _carriedItem;
+        set
+        {
+            _carriedItem = value;
+        }
+    }
 
-    private FSM _fsm;
+    public enum State { DEFAULT, CARRYING_AN_ITEM }
+
+    private State _currentState;
+    public State CurrentState
+    {
+        get => _currentState;
+        set
+        {
+            _currentState = value;
+            switch (_currentState)
+            {
+                case State.DEFAULT:
+                    moveSpeed = GameConstants.defaultMoveSpeed;
+                    jumpForce = GameConstants.defaultJumpForce;
+                    break;
+                case State.CARRYING_AN_ITEM:
+                    moveSpeed = GameConstants.moveSpeedWhenCarrying;
+                    jumpForce = GameConstants.jumpForceWhenCarrying;
+                    break;
+            }
+        }
+    }
+
     public BaseState[] states;
 
     protected override void Awake()
@@ -30,8 +62,6 @@ public abstract class Character : Unit
     protected override void Start()
     {
         base.Start();
-
-        _fsm = new FSM(typeof(DefaultState), states);
         
         interactableObjectTypes = new List<Type>();
         InitInteractableObjectTypes();
@@ -42,6 +72,7 @@ public abstract class Character : Unit
     protected override void Update()
     {
         base.Update();
+        
         HandleInput();
     }
 
@@ -89,7 +120,14 @@ public abstract class Character : Unit
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ixArea.propInFocus?.OnInteract(this);
+            if (CarriedItem == null)
+            {
+                ixArea.propInFocus?.OnPickup(this);   
+            }
+            else
+            {
+                CarriedItem.OnDrop(this);
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ public class FSM
     private Dictionary<Type, BaseState> stateDictionary;
     private BaseState currentState;
 
-    public FSM(Type startState, params BaseState[] states)
+    public FSM(params BaseState[] states)
     {
         stateDictionary = new Dictionary<Type, BaseState>();
 
@@ -15,11 +15,9 @@ public class FSM
             if (state != null)
             {
                 state.Init(this);
-                stateDictionary.Add(state.GetType(), state);   
+                stateDictionary.Add(state.GetType(), state);
             }
         }
-
-        SwitchState(startState);
     }
 
     public void OnUpdate()
