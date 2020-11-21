@@ -556,7 +556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Add improved isGrounded check
+  m_Text: Organize code structure
 --- !u!222 &906767061
 CanvasRenderer:
   m_ObjectHideFlags: 0
