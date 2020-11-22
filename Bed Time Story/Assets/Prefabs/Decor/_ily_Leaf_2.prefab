@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2361099880922839664}
   - component: {fileID: 1669438405032974830}
   m_Layer: 0
-  m_Name: _ily (1)
+  m_Name: _ily_Leaf_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,8 +108,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6943082296797585937}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.008550644, y: -0.4599998, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.008550644, y: -0.08, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 2361099880922839664}
   m_RootOrder: 0
