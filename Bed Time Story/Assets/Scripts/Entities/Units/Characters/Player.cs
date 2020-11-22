@@ -14,11 +14,15 @@ public class Player : Unit
     }
 
     protected IXArea ixArea;
-    private ToyBlock _carriedItem;
-    public ToyBlock CarriedItem
+    private ToyBlock _carriedBlock;
+    public ToyBlock CarriedBlock
     {
-        get => _carriedItem;
-        set => _carriedItem = value;
+        get => _carriedBlock;
+        set
+        {
+            _carriedBlock = value;
+            CurrentState = value == null ? State.DEFAULT : State.CARRYING_AN_ITEM;
+        }
     }
 
     internal Vector2 dir;
@@ -52,21 +56,16 @@ public class Player : Unit
         ixArea = GetComponentInChildren<IXArea>();
     }
 
-    protected override void Start()
-    {
-        base.Start();
-    }
-
     protected override void Update()
     {
         base.Update();
         
+        HandleGravity();
         HandleInput();
     }
 
     private void HandleInput()
     {
-        HandleGravity();
         HandleHorizontalMovement();
         HandleJump();
         HandleInteraction();
@@ -110,13 +109,13 @@ public class Player : Unit
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (CarriedItem == null)
+            if (CarriedBlock == null)
             {
                 ixArea.propInFocus?.OnPickup(this);
             }
             else
             {
-                CarriedItem.OnDrop(this);
+                CarriedBlock.OnDrop(this);
             }
         }
     }

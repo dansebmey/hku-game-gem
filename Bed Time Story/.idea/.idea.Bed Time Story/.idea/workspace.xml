@@ -10,11 +10,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/IXArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameConstants.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/IXArea.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/ScanArea.cs" root0="FORCE_HIGHLIGHTING" />
@@ -49,9 +50,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Parent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
       </list>
     </option>
   </component>
@@ -93,6 +96,7 @@
       <updated>1605912398178</updated>
       <workItem from="1605912405850" duration="10150000" />
       <workItem from="1605947328865" duration="26694000" />
+      <workItem from="1606035075805" duration="5693000" />
     </task>
     <servers />
   </component>
