@@ -52,9 +52,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
       </list>
     </option>
   </component>
@@ -96,7 +96,7 @@
       <updated>1605912398178</updated>
       <workItem from="1605912405850" duration="10150000" />
       <workItem from="1605947328865" duration="26694000" />
-      <workItem from="1606035075805" duration="4318000" />
+      <workItem from="1606035075805" duration="5693000" />
     </task>
     <servers />
   </component>

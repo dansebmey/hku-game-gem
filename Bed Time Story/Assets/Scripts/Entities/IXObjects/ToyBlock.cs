@@ -6,11 +6,14 @@ using UnityEngine;
 public class ToyBlock : IXObject
 {
     // private SpriteRenderer _mirroredOutlineSpriteRenderer;
+    private SpriteRenderer _spriteRenderer;
+    public Sprite sprite2d, sprite3d;
 
     protected override void Awake()
     {
         base.Awake();
-        
+
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         ixSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[1];
         // _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
     }
@@ -19,6 +22,7 @@ public class ToyBlock : IXObject
     {
         base.OnPickup(actor);
         
+        _spriteRenderer.sprite = sprite3d;
         foreach (var c2d in coll2ds)
         {
             c2d.enabled = false;   
@@ -40,6 +44,7 @@ public class ToyBlock : IXObject
     {
         base.OnDrop(actor);
         
+        _spriteRenderer.sprite = sprite2d;
         foreach (var c2d in coll2ds)
         {
             c2d.enabled = true;   
