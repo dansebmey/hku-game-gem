@@ -12,6 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/BlockDropArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -26,7 +27,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Child.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/GroundCheckArea.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -42,7 +42,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prop.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/CarryingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/DefaultState.cs" />
@@ -79,6 +78,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
       </list>
     </option>
   </component>

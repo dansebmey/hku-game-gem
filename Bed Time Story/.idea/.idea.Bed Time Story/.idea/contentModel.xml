@@ -27,7 +27,10 @@
             </e>
           </e>
           <e p="Meta" t="Include">
-            <e p="AudioManager.cs" t="Include" />
+            <e p="AudioManager" t="Include">
+              <e p="AudioManager.cs" t="Include" />
+              <e p="Sound.cs" t="Include" />
+            </e>
             <e p="CameraController.cs" t="Include" />
             <e p="GameConstants.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
