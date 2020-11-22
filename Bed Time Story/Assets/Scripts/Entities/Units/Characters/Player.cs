@@ -43,8 +43,8 @@ public class Player : Unit
                     _jumpForce = defaultJumpForce;
                     break;
                 case State.CARRYING_AN_ITEM:
-                    moveSpeed = defaultMoveSpeed * 0.5f;
-                    _jumpForce = defaultJumpForce * 0.5f;
+                    moveSpeed = defaultMoveSpeed * 1;
+                    _jumpForce = defaultJumpForce * 1;
                     break;
             }
         }

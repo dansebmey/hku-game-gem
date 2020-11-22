@@ -15,6 +15,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/PlayerArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/BlockDropArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/TriggerArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/TriggerAreas/TriggerArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/MagneticSnapArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/PlayerArea.cs" />
@@ -69,6 +69,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Child.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
       </list>
     </option>
   </component>
