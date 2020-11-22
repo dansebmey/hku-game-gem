@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Player : Unit
 {
     public float defaultJumpForce;
     private float _jumpForce;
-    
+
+    private Animator animator;
+
     protected bool isGrounded;
     public bool IsGrounded
     {
@@ -54,6 +58,8 @@ public class Player : Unit
     {
         base.Awake();
 
+        animator = GetComponentInChildren<Animator>();
+
         ixArea = GetComponentInChildren<IXArea>();
     }
 
@@ -68,8 +74,10 @@ public class Player : Unit
     {
         base.Update();
         
-        HandleGravity();
+        // HandleGravity();
         HandleInput();
+
+        animator.SetFloat("VerticalSpeed", rb.velocity.y);
     }
 
     private void HandleInput()
@@ -88,6 +96,8 @@ public class Player : Unit
     {
         var xSpeed = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(xSpeed * moveSpeed, rb.velocity.y);
+
+        animator.SetFloat("HorizontalSpeed", rb.velocity.x);
 
         if (xSpeed > 0)
         {
