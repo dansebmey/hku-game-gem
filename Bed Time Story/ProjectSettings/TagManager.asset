@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Reflection Only
   - 
   - 
   - 
@@ -42,9 +42,15 @@ TagManager:
   - name: Background
     uniqueID: 467427751
     locked: 0
+  - name: Middleground
+    uniqueID: 1644327151
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: UI
     uniqueID: 707650381
+    locked: 0
+  - name: Foreground
+    uniqueID: 2053230159
     locked: 0
