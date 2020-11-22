@@ -9,6 +9,13 @@ public abstract class IXObject : MonoBehaviour
     protected Transform tooltip;
     protected bool isBeingCarried;
 
+    private static bool _showTooltip = true;
+    public bool ShowTooltip
+    {
+        get => _showTooltip;
+        set => _showTooltip = value;
+    }
+
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,7 +44,7 @@ public abstract class IXObject : MonoBehaviour
 
     public void OnEnterScope()
     {
-        tooltip.gameObject.SetActive(true);
+        tooltip.gameObject.SetActive(_showTooltip);
     }
     
     public void OnLeaveScope()

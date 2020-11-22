@@ -29,7 +29,15 @@ public class Player : Unit
         set
         {
             _carriedBlock = value;
-            CurrentState = value == null ? State.DEFAULT : State.CARRYING_AN_ITEM;
+            if (value == null)
+            {
+                CurrentState = State.DEFAULT;
+            }
+            else
+            {
+                CurrentState = State.CARRYING_AN_ITEM;
+                _carriedBlock.ShowTooltip = false;
+            }
         }
     }
 

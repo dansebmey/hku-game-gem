@@ -60,7 +60,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/TriggerAreas/TriggerArea.cs" />
@@ -69,7 +68,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/BlockDropArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/TriggerArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/GroundCheckArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Child.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxLayer.cs" />
@@ -78,7 +76,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxBackground.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
       </list>
     </option>
   </component>
