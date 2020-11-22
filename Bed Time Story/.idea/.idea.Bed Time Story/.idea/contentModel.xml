@@ -16,6 +16,7 @@
             </e>
             <e p="Props" t="Include">
               <e p="Cube.cs" t="Include" />
+              <e p="Shaker.cs" t="Include" />
             </e>
             <e p="Units" t="Include">
               <e p="Characters" t="Include">
