@@ -19,6 +19,7 @@
             </e>
             <e p="Units" t="Include">
               <e p="Characters" t="Include">
+                <e p="Child.cs" t="Include" />
                 <e p="Player.cs" t="Include" />
               </e>
               <e p="Unit.cs" t="Include" />
@@ -30,9 +31,10 @@
             <e p="GameManager.cs" t="Include" />
             <e p="TilemapManager.cs" t="Include" />
             <e p="TriggerAreas" t="Include">
+              <e p="BlockDropArea.cs" t="Include" />
               <e p="GroundCheckArea.cs" t="Include" />
+              <e p="HoleScanArea.cs" t="Include" />
               <e p="IXArea.cs" t="Include" />
-              <e p="MagneticSnapArea.cs" t="Include" />
               <e p="PlayerArea.cs" t="Include" />
               <e p="TriggerArea.cs" t="Include" />
             </e>

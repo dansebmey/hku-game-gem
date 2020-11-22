@@ -5,7 +5,7 @@ public class IXArea : PlayerArea
 {
     internal ToyBlock propInFocus;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         var prop = other.gameObject.GetComponent<ToyBlock>();
         if (prop != null && propInFocus == null)
@@ -15,7 +15,7 @@ public class IXArea : PlayerArea
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected override void OnTriggerExit2D(Collider2D other)
     {
         propInFocus?.OnLeaveScope();
         propInFocus = null;
