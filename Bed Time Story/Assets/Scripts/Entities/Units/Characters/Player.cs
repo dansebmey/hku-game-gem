@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    [SerializeField] private ParallaxBackground _parallaxBackground;
+    
     public float defaultJumpForce;
     private float _jumpForce;
     
@@ -77,6 +79,8 @@ public class Player : Unit
         HandleHorizontalMovement();
         HandleJump();
         HandleInteraction();
+        
+        _parallaxBackground.Move(rb.velocity.x);
     }
 
     private void HandleGravity()

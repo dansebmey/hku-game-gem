@@ -30,6 +30,11 @@
             <e p="CameraController.cs" t="Include" />
             <e p="GameConstants.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+            <e p="Parallax" t="Include">
+              <e p="ParallaxBackground.cs" t="Include" />
+              <e p="ParallaxCamera.cs" t="Include" />
+              <e p="ParallaxLayer.cs" t="Include" />
+            </e>
             <e p="TilemapManager.cs" t="Include" />
             <e p="TriggerAreas" t="Include">
               <e p="BlockDropArea.cs" t="Include" />
