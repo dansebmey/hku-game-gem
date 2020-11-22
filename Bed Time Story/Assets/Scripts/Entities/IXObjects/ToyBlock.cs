@@ -1,46 +1,61 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ToyBlock : IXObject
 {
-    private SpriteRenderer _mirroredOutlineSpriteRenderer;
+    // private SpriteRenderer _mirroredOutlineSpriteRenderer;
 
     protected override void Awake()
     {
         base.Awake();
         
         ixSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[1];
-        _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
+        // _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
     }
 
     public override void OnPickup(Player actor)
     {
+        base.OnPickup(actor);
+        
+        foreach (var c2d in coll2ds)
+        {
+            c2d.enabled = false;   
+        }
+        actor.CarriedBlock = this;
         isBeingCarried = true;
+        // reset and freeze rotation
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        rb.freezeRotation = true;
         
-        actor.CarriedItem = this;
-        actor.CurrentState = Player.State.CARRYING_AN_ITEM;
-
-        coll2d.enabled = false;
         transform.parent = actor.transform;
-        
         var actorScale = actor.transform.localScale;
         transform.localScale = new Vector3(actorScale.x * -1, actorScale.y);
         
-        _mirroredOutlineSpriteRenderer.enabled = true;
+        // _mirroredOutlineSpriteRenderer.enabled = true;
     }
 
     public override void OnDrop(Player actor)
     {
+        base.OnDrop(actor);
+        
+        foreach (var c2d in coll2ds)
+        {
+            c2d.enabled = true;   
+        }
+        actor.CarriedBlock = null;
         isBeingCarried = false;
-        
-        actor.CarriedItem = null;
-        actor.CurrentState = Player.State.DEFAULT;
-        transform.localScale = actor.transform.localScale;
+        rb.freezeRotation = false;
 
-        coll2d.enabled = true;
-        transform.parent = null;
+        var tf = transform;
+        var actorScale = actor.transform.localScale;
+        tf.localScale = actorScale;
+        tf.position += new Vector3(actorScale.x * 0.5f, 0);
         
-        _mirroredOutlineSpriteRenderer.enabled = false;
+        tf.parent = null;
+
+        // _mirroredOutlineSpriteRenderer.enabled = false;
     }
 
     protected override void Update()
@@ -51,8 +66,7 @@ public class ToyBlock : IXObject
         {
             transform.localPosition = new Vector3(0.5f, -0.5f);
 
-            _mirroredOutlineSpriteRenderer.transform.position
-                = transform.InverseTransformPoint(0, -0.5f, 0);
+            // _mirroredOutlineSpriteRenderer.transform.localPosition = new Vector3(transform.localScale.normalized.x * 0.5f, 0);
         }
     }
 }
