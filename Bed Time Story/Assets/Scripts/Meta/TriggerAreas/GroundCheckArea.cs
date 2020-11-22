@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundCheckArea : PlayerArea
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
@@ -21,7 +21,7 @@ public class GroundCheckArea : PlayerArea
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected override void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {

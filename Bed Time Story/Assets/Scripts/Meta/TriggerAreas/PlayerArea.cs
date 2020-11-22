@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerArea : TriggerArea
+public abstract class PlayerArea : TriggerArea
 {
     protected Player Player;
 
