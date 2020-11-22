@@ -14,7 +14,13 @@ public class ToyBlock : IXObject
         base.Awake();
 
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        ixSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[1];
+        foreach (Transform tf in GetComponentsInChildren<Transform>(true))
+        {
+            if (tf.CompareTag("Meta"))
+            {
+                tooltip = tf;
+            }
+        }
         // _mirroredOutlineSpriteRenderer = GetComponentsInChildren<SpriteRenderer>(true)[2];
     }
 

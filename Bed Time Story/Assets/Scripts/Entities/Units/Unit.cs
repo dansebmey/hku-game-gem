@@ -3,7 +3,9 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    public float moveSpeed;
+    public float defaultMoveSpeed;
+    protected float moveSpeed;
+    
     protected Rigidbody2D rb;
 
     protected virtual void Awake()
@@ -13,7 +15,7 @@ public abstract class Unit : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+        moveSpeed = defaultMoveSpeed;
     }
 
     protected virtual void Update()

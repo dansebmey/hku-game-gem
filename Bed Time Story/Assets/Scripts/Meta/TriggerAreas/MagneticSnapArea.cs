@@ -1,10 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class IXArea : ScanArea
+public class MagneticSnapArea : MonoBehaviour
 {
-    internal ToyBlock propInFocus;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         var prop = other.gameObject.GetComponent<ToyBlock>();
@@ -13,11 +10,5 @@ public class IXArea : ScanArea
             propInFocus = prop;
             propInFocus.OnEnterScope();
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        propInFocus?.OnLeaveScope();
-        propInFocus = null;
     }
 }

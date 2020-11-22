@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ScanArea : MonoBehaviour
+public class PlayerArea : TriggerArea
 {
     protected Player Player;
 

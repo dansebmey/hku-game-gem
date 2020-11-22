@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Player : Unit
 {
-    public float jumpForce;
+    public float defaultJumpForce;
+    private float _jumpForce;
     
     protected bool isGrounded;
     public bool IsGrounded
@@ -38,12 +39,12 @@ public class Player : Unit
             switch (_currentState)
             {
                 case State.DEFAULT:
-                    moveSpeed = GameConstants.defaultMoveSpeed;
-                    jumpForce = GameConstants.defaultJumpForce;
+                    moveSpeed = defaultMoveSpeed;
+                    _jumpForce = defaultJumpForce;
                     break;
                 case State.CARRYING_AN_ITEM:
-                    moveSpeed = GameConstants.moveSpeedWhenCarrying;
-                    jumpForce = GameConstants.jumpForceWhenCarrying;
+                    moveSpeed = defaultMoveSpeed * 0.5f;
+                    _jumpForce = defaultJumpForce * 0.5f;
                     break;
             }
         }
@@ -54,6 +55,13 @@ public class Player : Unit
         base.Awake();
 
         ixArea = GetComponentInChildren<IXArea>();
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        _jumpForce = defaultJumpForce;
     }
 
     protected override void Update()
@@ -97,7 +105,7 @@ public class Player : Unit
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, _jumpForce);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {

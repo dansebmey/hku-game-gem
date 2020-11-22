@@ -6,7 +6,7 @@ public abstract class IXObject : MonoBehaviour
     protected Rigidbody2D rb;
     protected Collider2D[] coll2ds;
     
-    protected SpriteRenderer ixSpriteRenderer;
+    protected Transform tooltip;
     protected bool isBeingCarried;
 
     protected virtual void Awake()
@@ -37,11 +37,11 @@ public abstract class IXObject : MonoBehaviour
 
     public void OnEnterScope()
     {
-        ixSpriteRenderer.enabled = true;
+        tooltip.gameObject.SetActive(true);
     }
     
     public void OnLeaveScope()
     {
-        ixSpriteRenderer.enabled = false;
+        tooltip.gameObject.SetActive(false);
     }
 }

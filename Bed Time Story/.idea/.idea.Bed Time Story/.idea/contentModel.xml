@@ -18,11 +18,6 @@
             <e p="Units" t="Include">
               <e p="Characters" t="Include">
                 <e p="Player.cs" t="Include" />
-                <e p="ScanAreas" t="Include">
-                  <e p="GroundCheckArea.cs" t="Include" />
-                  <e p="IXArea.cs" t="Include" />
-                  <e p="ScanArea.cs" t="Include" />
-                </e>
               </e>
               <e p="Unit.cs" t="Include" />
             </e>
@@ -32,6 +27,13 @@
             <e p="GameConstants.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="TilemapManager.cs" t="Include" />
+            <e p="TriggerAreas" t="Include">
+              <e p="GroundCheckArea.cs" t="Include" />
+              <e p="IXArea.cs" t="Include" />
+              <e p="MagneticSnapArea.cs" t="Include" />
+              <e p="PlayerArea.cs" t="Include" />
+              <e p="TriggerArea.cs" t="Include" />
+            </e>
           </e>
         </e>
       </e>
