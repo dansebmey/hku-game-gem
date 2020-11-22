@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Unit
 {
@@ -84,11 +85,20 @@ public class Player : Unit
 
     private void HandleInput()
     {
+        HandleEsc();
         HandleHorizontalMovement();
         HandleJump();
         HandleInteraction();
         
         _parallaxBackground.Move(rb.velocity.x);
+    }
+
+    private void HandleEsc()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        }
     }
 
     private void HandleGravity()

@@ -76,9 +76,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxBackground.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
       </list>
     </option>
   </component>
