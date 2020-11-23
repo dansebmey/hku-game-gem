@@ -5,16 +5,15 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : Unit
+public class Player : Entity
 {
     #region Attributes
     
-    [SerializeField] private ParallaxBackground _parallaxBackground;
+    [SerializeField] private ParallaxBackground parallaxBackground;
+    [SerializeField] private Transform respawnBook;
     
     public float defaultJumpForce;
     private float _jumpForce;
-
-    private Animator animator;
 
     protected bool isGrounded;
     public bool IsGrounded
@@ -38,12 +37,11 @@ public class Player : Unit
             else
             {
                 CurrentState = State.CARRYING_AN_ITEM;
-                _carriedBlock.ShowTooltip = false;
             }
         }
     }
 
-    internal Vector2 dir;
+    private Vector3 _cachedVelocityOnPause;
 
     public enum State { DEFAULT, CARRYING_AN_ITEM }
     private State _currentState = State.DEFAULT;
@@ -87,6 +85,7 @@ public class Player : Unit
 
     protected virtual void Update()
     {
+        HandlePause();
         if (GameManager.gameState == GameManager.GameState.PLAYING)
         {
             HandleInput();
@@ -97,19 +96,34 @@ public class Player : Unit
 
     private void HandleInput()
     {
-        HandleEsc();
         HandleHorizontalMovement();
         HandleJump();
         HandleInteraction();
-        
-        _parallaxBackground.Move(rb.velocity.x);
+
+        parallaxBackground.Move(rb.velocity.x);
     }
 
-    private void HandleEsc()
+    private void HandlePause()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            GameManager.ResetLevel();
+            switch (GameManager.gameState)
+            {
+                case GameManager.GameState.PLAYING:
+                    GameManager.TogglePause(true);
+                    break;
+                case GameManager.GameState.PAUSED:
+                    GameManager.TogglePause(false);
+                    break;
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.B))
+        {
+            if (GameManager.gameState == GameManager.GameState.PAUSED)
+            {
+                GameManager.TogglePause(false);
+            }
+            GameManager.ResetToCheckpoint();
         }
     }
 
@@ -122,12 +136,10 @@ public class Player : Unit
 
         if (xSpeed > 0)
         {
-            dir = Vector2.right;
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if (xSpeed < 0)
         {
-            dir = Vector2.left;
             transform.localScale = new Vector3(-1, 1, 1);
         }
     }
@@ -137,6 +149,7 @@ public class Player : Unit
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, _jumpForce);
+            GameManager.AudioManager.Play("Jump", 0.1f);
         }
         else if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -150,18 +163,40 @@ public class Player : Unit
         {
             if (CarriedBlock == null)
             {
-                ixArea.propInFocus?.OnPickup(this);
+                ixArea.objectInFocus?.OnInteract(this);
             }
             else
             {
-                CarriedBlock.OnDrop(this);
+                CarriedBlock.OnInteract(this);
             }
         }
+    }
+
+    private bool IsMoving()
+    {
+        return rb.velocity != Vector2.zero;
     }
 
     public override void OnLevelReset()
     {
         CurrentState = State.DEFAULT;
         CarriedBlock = null;
+    }
+
+    public override void TogglePause(bool doPause)
+    {
+        base.TogglePause(doPause);
+        
+        if (doPause)
+        {
+            _cachedVelocityOnPause = rb.velocity;
+            rb.velocity = Vector3.zero;
+            rb.gravityScale = 0;
+        }
+        else
+        {
+            rb.velocity = _cachedVelocityOnPause;
+            rb.gravityScale = 2;
+        }
     }
 }

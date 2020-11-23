@@ -3,43 +3,40 @@ using UnityEngine;
 
 public abstract class IXObject : SWObject
 {
-    protected Rigidbody2D rb;
-    protected Collider2D[] coll2ds;
-    
     protected Transform tooltip;
 
-    private static bool _showTooltip = true;
-    public bool ShowTooltip
-    {
-        get => _showTooltip;
-        set => _showTooltip = value;
-    }
+    protected bool isInteractable = true;
+
+    protected SpriteRenderer spriteRenderer;
 
     protected override void Awake()
     {
         base.Awake();
-        
-        rb = GetComponent<Rigidbody2D>();
-        coll2ds = GetComponents<Collider2D>();
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        foreach (Transform tf in GetComponentsInChildren<Transform>(true))
+        {
+            if (tf.CompareTag("Meta"))
+            {
+                tooltip = tf;
+            }
+        }
     }
 
-    public abstract void OnPickup(Player actor);
-
-    public abstract void OnDrop(Player actor);
-
-    protected virtual void Update()
+    public void OnInteract(Player actor)
     {
-        HandleGravity();
+        if (isInteractable)
+        {
+            _OnInteract(actor);
+            GameManager.RegisterTooltipShown(GetType());
+        }
     }
 
-    private void HandleGravity()
-    {
-        rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
-    }
+    protected abstract void _OnInteract(Player actor);
 
     public void OnEnterScope()
     {
-        tooltip.gameObject.SetActive(_showTooltip);
+        tooltip.gameObject.SetActive(!GameManager.IsTooltipShownFor(GetType()));
     }
     
     public void OnLeaveScope()

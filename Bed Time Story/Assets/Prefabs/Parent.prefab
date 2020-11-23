@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.25, y: 0.1}
   m_EdgeRadius: 0
 --- !u!114 &7825748378637381179
 MonoBehaviour:
@@ -115,7 +115,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.625, y: -0.625}
+  m_Offset: {x: 0.44, y: -0.625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -126,7 +126,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.75}
+  m_Size: {x: 0.33, y: 0.75}
   m_EdgeRadius: 0
 --- !u!114 &7825748379598370741
 MonoBehaviour:
@@ -150,6 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7825748379817000331}
   - component: {fileID: 7825748379817000333}
+  - component: {fileID: 7825748378785659506}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -222,6 +223,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7825748378785659506
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825748379817000330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89649d91ab33ef041a42ffcd1921ea92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7825748380186995801
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +319,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -317,6 +337,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578625f3b8544680b7ac59079d9f3a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initPos: {x: 0, y: 0, z: 0}
+  cachedPos: {x: 0, y: 0, z: 0}
+  cachedVelocity: {x: 0, y: 0, z: 0}
   defaultMoveSpeed: 4
-  _parallaxBackground: {fileID: 0}
-  defaultJumpForce: 6
+  parallaxBackground: {fileID: 0}
+  respawnBook: {fileID: 0}
+  defaultJumpForce: 8

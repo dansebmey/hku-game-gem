@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class IXArea : PlayerArea
 {
-    internal ToyBlock propInFocus;
+    internal IXObject objectInFocus;
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        var prop = other.gameObject.GetComponent<ToyBlock>();
-        if (prop != null && propInFocus == null)
+        var prop = other.gameObject.GetComponent<IXObject>();
+        if (prop != null && objectInFocus == null) // objectInFocus == null prevents multiple objects from being targeted at the same time
         {
-            propInFocus = prop;
-            propInFocus.OnEnterScope();
+            objectInFocus = prop;
+            objectInFocus.OnEnterScope();
         }
     }
 
     protected override void OnTriggerExit2D(Collider2D other)
     {
-        propInFocus?.OnLeaveScope();
-        propInFocus = null;
+        objectInFocus?.OnLeaveScope();
+        objectInFocus = null;
     }
 }

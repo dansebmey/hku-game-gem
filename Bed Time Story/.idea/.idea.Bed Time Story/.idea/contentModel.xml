@@ -11,10 +11,13 @@
         <e p="Scripts" t="Include">
           <e p="Entities" t="Include">
             <e p="IXObjects" t="Include">
+              <e p="CheckpointBook.cs" t="Include" />
               <e p="IXObject.cs" t="Include" />
+              <e p="PIXObject.cs" t="Include" />
               <e p="ToyBlock.cs" t="Include" />
             </e>
             <e p="Props" t="Include">
+              <e p="LegoBricks.cs" t="Include" />
               <e p="Prop.cs" t="Include" />
               <e p="Shaker.cs" t="Include" />
             </e>
@@ -24,7 +27,7 @@
                 <e p="Child.cs" t="Include" />
                 <e p="Player.cs" t="Include" />
               </e>
-              <e p="Unit.cs" t="Include" />
+              <e p="Entity.cs" t="Include" />
             </e>
           </e>
           <e p="Meta" t="Include">

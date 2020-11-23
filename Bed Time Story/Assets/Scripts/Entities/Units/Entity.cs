@@ -1,8 +1,10 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class Unit : SWObject
+public abstract class Entity : SWObject
 {
+    protected Animator animator;
+    
     public float defaultMoveSpeed;
     protected float moveSpeed;
     
@@ -18,7 +20,13 @@ public abstract class Unit : SWObject
     protected override void Start()
     {
         base.Start();
+        GameManager.RegisterEntity(this);
         
         moveSpeed = defaultMoveSpeed;
+    }
+
+    public virtual void TogglePause(bool doPause)
+    {
+        
     }
 }

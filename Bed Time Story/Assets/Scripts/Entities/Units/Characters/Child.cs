@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class Child : Unit
+public class Child : Entity
 {
-    private Animator _animator;
-
     public enum State { DEFAULT, CRYING }
     private State _currentState = State.DEFAULT;
     public State CurrentState
@@ -19,12 +17,14 @@ public class Child : Unit
             switch (_currentState)
             {
                 case State.DEFAULT:
+                    animator.SetBool("IsCrying", false);
+                    animator.Play("ChildWalk");
                     moveSpeed = defaultMoveSpeed;
                     break;
                 case State.CRYING:
-                    _animator.SetBool("IsCrying", true);
+                    animator.SetBool("IsCrying", true);
                     moveSpeed = 0;
-                    GameManager.ResetLevel();
+                    GameManager.ResetToCheckpoint();
                     break;
             }
         }
@@ -34,7 +34,7 @@ public class Child : Unit
     {
         base.Awake();
         
-        _animator = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     protected virtual void Update()

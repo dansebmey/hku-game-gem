@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToyBlock : IXObject
+public class ToyBlock : PIXObject
 {
     private enum State { DEFAULT, CARRIED }
 
@@ -17,7 +17,7 @@ public class ToyBlock : IXObject
             switch (value)
             {
                 case State.DEFAULT:
-                    _spriteRenderer.sprite = sprite2d;
+                    spriteRenderer.sprite = sprite2d;
                     foreach (var c2d in coll2ds)
                     {
                         c2d.enabled = true;   
@@ -27,7 +27,7 @@ public class ToyBlock : IXObject
                     
                     break;
                 case State.CARRIED:
-                    _spriteRenderer.sprite = sprite3d;
+                    spriteRenderer.sprite = sprite3d;
                     foreach (var c2d in coll2ds)
                     {
                         c2d.enabled = false;   
@@ -40,48 +40,33 @@ public class ToyBlock : IXObject
         }
     }
     
-    private SpriteRenderer _spriteRenderer;
     public Sprite sprite2d, sprite3d;
 
-    protected override void Awake()
+    protected override void _OnInteract(Player actor)
     {
-        base.Awake();
-
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        foreach (Transform tf in GetComponentsInChildren<Transform>(true))
+        var actorScale = actor.transform.localScale;
+        switch (CurrentState)
         {
-            if (tf.CompareTag("Meta"))
-            {
-                tooltip = tf;
-            }
+            case State.DEFAULT:
+                CurrentState = State.CARRIED;
+                actor.CarriedBlock = this;
+        
+                transform.parent = actor.transform;
+                transform.localScale = new Vector3(actorScale.x * -1, actorScale.y);
+                break;
+            case State.CARRIED:
+                CurrentState = State.DEFAULT;
+                actor.CarriedBlock = null;
+
+                transform.localScale = actorScale;
+                transform.position += new Vector3(actorScale.x * 0.5f, 0);
+                break;
         }
-    }
-
-    public override void OnPickup(Player actor)
-    {
-        CurrentState = State.CARRIED;
-        actor.CarriedBlock = this;
-        
-        transform.parent = actor.transform;
-        var actorScale = actor.transform.localScale;
-        transform.localScale = new Vector3(actorScale.x * -1, actorScale.y);
         
     }
 
-    public override void OnDrop(Player actor)
+    protected void Update()
     {
-        CurrentState = State.DEFAULT;
-        actor.CarriedBlock = null;
-
-        var actorScale = actor.transform.localScale;
-        transform.localScale = actorScale;
-        transform.position += new Vector3(actorScale.x * 0.5f, 0);
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-        
         if (_currentState == State.CARRIED)
         {
             transform.localPosition = new Vector3(0.5f, -0.5f);

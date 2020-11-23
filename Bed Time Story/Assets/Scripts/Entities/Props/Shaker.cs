@@ -21,6 +21,7 @@ public class Shaker : SWObject
     {
         if (other.gameObject.GetComponentInChildren<GroundCheckArea>() != null)
         {
+            GameManager.AudioManager.Play("shaker-in", 0.05f);
             _triggered = true;
         }
     }
@@ -37,6 +38,8 @@ public class Shaker : SWObject
     {
         if (_triggered)
         {
+            GameManager.AudioManager.Play("shaker-out", 0.05f);
+            
             rb.bodyType = RigidbodyType2D.Dynamic;
             foreach (Collider2D c2d in coll2ds)
             {

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107a620abacf48deb7ebb5f1f355a93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   cameraController: {fileID: 0}
 --- !u!114 &888567309420317407
 MonoBehaviour:
@@ -60,7 +61,25 @@ MonoBehaviour:
   sounds:
   - name: Soundtrack
     clip: {fileID: 8300000, guid: 3f6328371713bf54eabdc529360416c6, type: 3}
-    volume: 0.5
-    pitch: 1
+    initVolume: 0.5
+    initPitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: a1572ffa0232a2d4d8bde1f7e50adb52, type: 3}
+    initVolume: 0.5
+    initPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shaker-in
+    clip: {fileID: 8300000, guid: 7e7c50768c192e04482cd2f758082e80, type: 3}
+    initVolume: 0.2
+    initPitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: shaker-out
+    clip: {fileID: 8300000, guid: 11543e3f7ee9dc943a2e7c4c5b0737d6, type: 3}
+    initVolume: 0.2
+    initPitch: 1
+    loop: 0
     source: {fileID: 0}

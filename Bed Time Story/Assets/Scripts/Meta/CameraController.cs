@@ -8,8 +8,12 @@ public class CameraController : SWMonoBehaviour
     [SerializeField] public Player player;
     
     private Camera _camera;
+    private Canvas _pauseCanvas;
     
     private SpriteRenderer _overlayRenderer;
+
+    [SerializeField] private Color transitionColour;
+    [SerializeField] private Color pauseScreenColour;
 
     protected override void Awake()
     {
@@ -17,6 +21,7 @@ public class CameraController : SWMonoBehaviour
         
         _camera = GetComponent<Camera>();
         _overlayRenderer = GetComponentInChildren<SpriteRenderer>();
+        _pauseCanvas = GetComponentInChildren<Canvas>(true);
     }
 
     internal void FadeIn(float fadeDuration)
@@ -26,9 +31,9 @@ public class CameraController : SWMonoBehaviour
     
     private IEnumerator _FadeIn(float fadeDuration)
     {
-        float r = _overlayRenderer.color.r;
-        float g = _overlayRenderer.color.g;
-        float b = _overlayRenderer.color.b;
+        float r = transitionColour.r;
+        float g = transitionColour.g;
+        float b = transitionColour.b;
         float alpha = 1;
 
         while (alpha > 0)
@@ -51,9 +56,9 @@ public class CameraController : SWMonoBehaviour
     {
         GameManager.gameState = GameManager.GameState.TRANSITIONING;
         
-        float r = _overlayRenderer.color.r;
-        float g = _overlayRenderer.color.g;
-        float b = _overlayRenderer.color.b;
+        float r = transitionColour.r;
+        float g = transitionColour.g;
+        float b = transitionColour.b;
         float alpha = 0;
 
         while (alpha < 1)
@@ -66,6 +71,12 @@ public class CameraController : SWMonoBehaviour
         
         onCompleteAction.Invoke();
         FadeIn(fadeDuration);
+    }
+
+    internal void TogglePauseOverlay(bool doShow)
+    {
+        _overlayRenderer.color = doShow ? pauseScreenColour : Color.clear;
+        _pauseCanvas.gameObject.SetActive(doShow);
     }
 
     private void Update()
