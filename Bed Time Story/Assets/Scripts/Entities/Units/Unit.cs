@@ -1,25 +1,24 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class Unit : MonoBehaviour
+public abstract class Unit : SWObject
 {
     public float defaultMoveSpeed;
     protected float moveSpeed;
     
     protected Rigidbody2D rb;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         rb = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        moveSpeed = defaultMoveSpeed;
-    }
-
-    protected virtual void Update()
-    {
+        base.Start();
         
+        moveSpeed = defaultMoveSpeed;
     }
 }

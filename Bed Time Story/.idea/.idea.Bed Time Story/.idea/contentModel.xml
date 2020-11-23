@@ -15,9 +15,10 @@
               <e p="ToyBlock.cs" t="Include" />
             </e>
             <e p="Props" t="Include">
-              <e p="Cube.cs" t="Include" />
+              <e p="Prop.cs" t="Include" />
               <e p="Shaker.cs" t="Include" />
             </e>
+            <e p="SWObject.cs" t="Include" />
             <e p="Units" t="Include">
               <e p="Characters" t="Include">
                 <e p="Child.cs" t="Include" />
@@ -32,6 +33,7 @@
               <e p="Sound.cs" t="Include" />
             </e>
             <e p="CameraController.cs" t="Include" />
+            <e p="DontDestroyOnLoad.cs" t="Include" />
             <e p="GameConstants.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Parallax" t="Include">
@@ -39,6 +41,7 @@
               <e p="ParallaxCamera.cs" t="Include" />
               <e p="ParallaxLayer.cs" t="Include" />
             </e>
+            <e p="SWMonoBehaviour.cs" t="Include" />
             <e p="TilemapManager.cs" t="Include" />
             <e p="TriggerAreas" t="Include">
               <e p="BlockDropArea.cs" t="Include" />

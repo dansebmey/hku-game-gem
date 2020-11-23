@@ -1,13 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class IXObject : MonoBehaviour
+public abstract class IXObject : SWObject
 {
     protected Rigidbody2D rb;
     protected Collider2D[] coll2ds;
     
     protected Transform tooltip;
-    protected bool isBeingCarried;
 
     private static bool _showTooltip = true;
     public bool ShowTooltip
@@ -16,21 +15,17 @@ public abstract class IXObject : MonoBehaviour
         set => _showTooltip = value;
     }
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         rb = GetComponent<Rigidbody2D>();
         coll2ds = GetComponents<Collider2D>();
     }
 
-    public virtual void OnPickup(Player actor)
-    {
-        isBeingCarried = true;
-    }
+    public abstract void OnPickup(Player actor);
 
-    public virtual void OnDrop(Player actor)
-    {
-        isBeingCarried = false;
-    }
+    public abstract void OnDrop(Player actor);
 
     protected virtual void Update()
     {

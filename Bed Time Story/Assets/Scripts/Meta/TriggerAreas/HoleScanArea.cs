@@ -17,7 +17,7 @@ public class HoleScanArea : TriggerArea
         {
             if (!dropArea.containsBlock)
             {
-                _child.Cry();
+                _child.CurrentState = Child.State.CRYING;
             }
         }
     }

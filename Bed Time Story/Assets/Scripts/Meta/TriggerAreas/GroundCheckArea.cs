@@ -8,7 +8,6 @@ public class GroundCheckArea : PlayerArea
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Landed on the ground");
             Player.IsGrounded = true;
         }
     }
@@ -25,7 +24,6 @@ public class GroundCheckArea : PlayerArea
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("No longer on the ground");
             Player.IsGrounded = false;
         }
     }

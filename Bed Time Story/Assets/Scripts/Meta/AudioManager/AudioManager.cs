@@ -40,21 +40,35 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
-    public void SetVolume(string name, float value)
+    public void FadeVolume(string soundName, float targetValue)
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        StartCoroutine(AdjustVolume(s, value, 1.5f));
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        StartCoroutine(AdjustVolume(s, s.volume, targetValue, 1.5f));
     }
 
-    private IEnumerator AdjustVolume(Sound s, float targetVolume, float fadeDuration)
+    public void FadeVolume(string soundName, float startValue, float targetValue)
     {
-        float startVolume = s.source.volume;
-        float delta = targetVolume - startVolume;
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        StartCoroutine(AdjustVolume(s, startValue, targetValue, 1.5f));
+    }
 
-        while(Mathf.Abs(s.source.volume - targetVolume) > 0.02f)
+    public void FadeVolume(string soundName, float startValue, float targetValue, float fadeDuration)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        StartCoroutine(AdjustVolume(s, startValue, targetValue, fadeDuration));
+    }
+
+    private IEnumerator AdjustVolume(Sound s, float startValue, float targetValue, float fadeDuration)
+    {
+        float delta = targetValue - startValue;
+        float volume = startValue;
+
+        while(Mathf.Abs(volume - targetValue) > 0.02f)
         {
-            s.source.volume += (0.1f / fadeDuration) * delta;
-            yield return new WaitForSeconds(0.1f);
+            volume += (0.01f / fadeDuration) * delta;
+            s.source.volume = volume;
+            
+            yield return new WaitForSeconds(0.01f);
         }
     }
 

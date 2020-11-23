@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shaker : MonoBehaviour
+public class Shaker : SWObject
 {
     private Rigidbody2D rb;
     private Collider2D[] coll2ds;
     private bool _triggered;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         rb = GetComponent<Rigidbody2D>();
         coll2ds = GetComponents<Collider2D>();
     }
@@ -20,6 +22,14 @@ public class Shaker : MonoBehaviour
         if (other.gameObject.GetComponentInChildren<GroundCheckArea>() != null)
         {
             _triggered = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (transform.position.y > 5.5f)
+        {
+            ResetObject(false);
         }
     }
 
@@ -33,5 +43,25 @@ public class Shaker : MonoBehaviour
                 c2d.enabled = false;
             }
         }
+    }
+
+    private void ResetObject(bool setActive)
+    {
+        _triggered = false;
+        transform.position = initPos;
+        
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.velocity = Vector3.zero;
+        foreach (Collider2D c2d in coll2ds)
+        {
+            c2d.enabled = true;
+        }
+        
+        gameObject.SetActive(setActive);
+    }
+
+    public override void OnLevelReset()
+    {
+        ResetObject(true);
     }
 }

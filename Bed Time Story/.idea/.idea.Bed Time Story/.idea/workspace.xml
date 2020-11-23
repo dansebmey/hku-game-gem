@@ -11,8 +11,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Cube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Props/Prop.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/SWObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager/Sound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/BlockDropArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -22,7 +24,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxLayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/PlayerArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/SWMonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/DontDestroyOnLoad.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/TriggerArea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" root0="FORCE_HIGHLIGHTING" />
@@ -41,7 +45,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Cube.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Prop.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/CarryingState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/StateMachine/CharacterStates/DefaultState.cs" />
@@ -60,24 +63,29 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/ScanAreas/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TilemapManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/TriggerAreas/TriggerArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/MagneticSnapArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/PlayerArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/BlockDropArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/TriggerArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/GroundCheckArea.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Child.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxLayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/Parallax/ParallaxBackground.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/IXArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager/Sound.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/AudioManager/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/SWMonoBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Unit.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/HoleScanArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/SWObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/ToyBlock.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Props/Shaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Entities/Units/Characters/Child.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Meta/TriggerAreas/GroundCheckArea.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Entities/IXObjects/IXObject.cs" />
       </list>
     </option>
@@ -121,6 +129,7 @@
       <workItem from="1605912405850" duration="10150000" />
       <workItem from="1605947328865" duration="26694000" />
       <workItem from="1606035075805" duration="7986000" />
+      <workItem from="1606135493401" duration="7873000" />
     </task>
     <servers />
   </component>

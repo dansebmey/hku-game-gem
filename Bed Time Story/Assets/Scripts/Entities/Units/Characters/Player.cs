@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : Unit
 {
+    #region Attributes
+    
     [SerializeField] private ParallaxBackground _parallaxBackground;
     
     public float defaultJumpForce;
@@ -64,6 +66,8 @@ public class Player : Unit
             }
         }
     }
+    
+    #endregion
 
     protected override void Awake()
     {
@@ -81,12 +85,12 @@ public class Player : Unit
         _jumpForce = defaultJumpForce;
     }
 
-    protected override void Update()
+    protected virtual void Update()
     {
-        base.Update();
-        
-        // HandleGravity();
-        HandleInput();
+        if (GameManager.gameState == GameManager.GameState.PLAYING)
+        {
+            HandleInput();
+        }
 
         animator.SetFloat("VerticalSpeed", rb.velocity.y);
     }
@@ -105,13 +109,8 @@ public class Player : Unit
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            GameManager.ResetLevel();
         }
-    }
-
-    private void HandleGravity()
-    {
-        rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
     }
 
     private void HandleHorizontalMovement()
@@ -158,5 +157,11 @@ public class Player : Unit
                 CarriedBlock.OnDrop(this);
             }
         }
+    }
+
+    public override void OnLevelReset()
+    {
+        CurrentState = State.DEFAULT;
+        CarriedBlock = null;
     }
 }
